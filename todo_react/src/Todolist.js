@@ -8,11 +8,11 @@ import Todo from './Todo'
 // which are then rendered by Todo cunctional component
 
 
-export default function Todolist({todoarr,update_todo_check}) {
-    console.log("todo list");
+export default function Todolist({todoarr}) {
+    // console.log("todo list");
     console.log(todoarr);
     // this functional component rescieves props.todos which is an array of todos
     return (
-        todoarr.map( (todo) => <Todo key={todo.id} todo={todo} update_todo_check={update_todo_check}/> )
+        todoarr.map( (todo) => <Todo key={todo.id} todo={todo} /> )
     )
 }
