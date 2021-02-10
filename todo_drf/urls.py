@@ -15,8 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title="My project swagger")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo_api', include('todo_api.urls'))
+    path('todo_api', include('todo_api.urls')),
+    path('openapi', get_schema_view(
+        title="Your Project",
+        description="API for all things …",
+        version="1.0.0"
+    ), name='openapi-schema'),
+    path('docs/', include_docs_urls(title='TodoApi')),
+    path('swagger_ui/', schema_view)
 ]

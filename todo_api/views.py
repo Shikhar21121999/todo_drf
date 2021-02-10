@@ -23,10 +23,16 @@ class ApiOverview(APIView):
 
 
 class Todolist(generics.ListCreateAPIView):
+    '''
+    returns an array of stored todos
+    '''
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 
 class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    '''
+    Detail of a particular todo given by pk or id
+    '''
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
