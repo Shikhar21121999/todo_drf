@@ -26,7 +26,7 @@ function App() {
       redirect: 'follow'
     };
 
-    fetch("http://127.0.0.1:8000/todo_api/task-list/", requestOptions)
+    fetch("http://127.0.0.1:8000/todo_api/task-list", requestOptions)
       .then(response => response.json())
       .then(result => {
           console.log(result)
@@ -48,7 +48,7 @@ function App() {
       redirect: 'follow'
     };
     
-    fetch("http://127.0.0.1:8000/todo_api/task-list/", requestOptions)
+    fetch("http://127.0.0.1:8000/todo_api/task-list", requestOptions)
       .then(response => response.json())
       .then(result => setTodoarr(result))
       .catch(error => console.log('error', error));

@@ -26,7 +26,7 @@ export default function Todo({todo}) {
         redirect: 'follow'
         };
 
-        let url=`http://127.0.0.1:8000/todo_api/task-detail/${todo.id}/`
+        let url=`http://127.0.0.1:8000/todo_api/task-detail/${todo.id}`
 
         fetch(url, requestOptions)
         .then(response => response.text())
@@ -47,7 +47,7 @@ export default function Todo({todo}) {
         redirect: 'follow'
         };
 
-        fetch(`http://127.0.0.1:8000/todo_api/task-detail/${todo.id}/`, requestOptions)
+        fetch(`http://127.0.0.1:8000/todo_api/task-detail/${todo.id}`, requestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result)

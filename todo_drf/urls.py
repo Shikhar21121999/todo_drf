@@ -24,7 +24,7 @@ schema_view = get_swagger_view(title="My project swagger")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo_api', include('todo_api.urls')),
+    path('todo_api/', include('todo_api.urls')),
     path('openapi', get_schema_view(
         title="Your Project",
         description="API for all things …",
